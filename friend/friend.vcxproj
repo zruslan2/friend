@@ -19,16 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Exam.h" />
     <ClInclude Include="library.h" />
     <ClInclude Include="Student.h" />
-    <ClInclude Include="Techer.h" />
+    <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Exam.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Student.cpp" />
-    <ClCompile Include="Techer.cpp" />
+    <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="exams.txt" />
     <Text Include="in.txt" />
     <Text Include="t.txt" />
   </ItemGroup>

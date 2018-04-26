@@ -1,5 +1,6 @@
 #pragma once
 #include"library.h"
+#include "Exam.h"
 
 class Student
 {
@@ -17,6 +18,8 @@ public:
 	//destructor
 	virtual ~Student();
 
+	string getSname() { return sname; }
+
 	bool operator>(int age);
 
 	friend void printStudents(Student*ss, int size);
@@ -26,4 +29,5 @@ public:
 	friend bool operator!=(string male, Student obj);
 	friend bool operator<(int age, Student obj);
 	friend bool operator<(Student obj1, Student obj2);
+	friend class Exam;
 };

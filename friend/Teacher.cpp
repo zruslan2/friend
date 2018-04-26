@@ -1,7 +1,7 @@
-#include "Techer.h"
+#include "Teacher.h"
 
 
-Techer::Techer()
+Teacher::Teacher()
 {
 	name = "";
 	sname = "";
@@ -10,7 +10,7 @@ Techer::Techer()
 	faculty = "history";
 }
 
-Techer::Techer(string name, string sname, int age, string male, string faculty)
+Teacher::Teacher(string name, string sname, int age, string male, string faculty)
 {
 	this->name = name;
 	this->sname = sname;
@@ -19,7 +19,7 @@ Techer::Techer(string name, string sname, int age, string male, string faculty)
 	this->faculty = faculty;
 }
 
-Techer::Techer(const Techer& obj)
+Teacher::Teacher(const Teacher& obj)
 {
 	this->name = obj.name;
 	this->sname = obj.sname;
@@ -29,15 +29,15 @@ Techer::Techer(const Techer& obj)
 }
 
 
-void printTecher(Techer*t, int size)
+void printTecher(Teacher*t, int size)
 {
 	for (int i = 0;i < size;i++)
 	{
-		cout << t[i].name << "\t" << t[i].sname << "\t" << t[i].age << "\t" << t[i].male << "\t" << t[i].faculty << endl;
+		cout << t[i].sname << "\t" << t[i].name << "\t" << t[i].age << "\t" << t[i].male << "\t" << t[i].faculty << endl;
 	}		
 }
 
-void operator >> (istream& in, Techer &s)
+void operator >> (istream& in, Teacher &s)
 {
 	string str;
 	getline(in, str, '\n');
@@ -47,31 +47,31 @@ void operator >> (istream& in, Techer &s)
 	getline(in, s.faculty, '\\');
 }
 
-bool operator==(string faculty, Techer obj)
+bool operator==(string faculty, Teacher obj)
 {
 	return(faculty == obj.male);
 }
 
-bool operator!=(string faculty, Techer obj)
+bool operator!=(string faculty, Teacher obj)
 {
 	return(faculty != obj.male);
 }
 
-bool operator<(int age, Techer obj)
+bool operator<(int age, Teacher obj)
 {
 	return(age < obj.age);
 }
 
-bool operator>(int age, Techer obj)
+bool operator>(int age, Teacher obj)
 {
 	return(age > obj.age);
 }
 
-bool operator>(Techer obj1, Techer obj2)
+bool operator>(Teacher obj1, Teacher obj2)
 {
 	return(obj1.age > obj2.age);
 }
 
-Techer::~Techer()
+Teacher::~Teacher()
 {
 }
