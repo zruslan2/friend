@@ -34,18 +34,27 @@ void printTecher(Techer*t, int size)
 	for (int i = 0;i < size;i++)
 	{
 		cout << t[i].name << "\t" << t[i].sname << "\t" << t[i].age << "\t" << t[i].male << "\t" << t[i].faculty << endl;
-	}
-		
+	}		
 }
 
-bool operator==(string male, Techer obj)
+void operator >> (istream& in, Techer &s)
 {
-	return(male == obj.male);
+	string str;
+	getline(in, str, '\n');
+	getline(in, s.name, '\\');
+	getline(in, s.sname, '\\');
+	in >> s.age >> s.male;
+	getline(in, s.faculty, '\\');
 }
 
-bool operator!=(string male, Techer obj)
+bool operator==(string faculty, Techer obj)
 {
-	return(male != obj.male);
+	return(faculty == obj.male);
+}
+
+bool operator!=(string faculty, Techer obj)
+{
+	return(faculty != obj.male);
 }
 
 bool operator<(int age, Techer obj)
@@ -56,6 +65,11 @@ bool operator<(int age, Techer obj)
 bool operator>(int age, Techer obj)
 {
 	return(age > obj.age);
+}
+
+bool operator>(Techer obj1, Techer obj2)
+{
+	return(obj1.age > obj2.age);
 }
 
 Techer::~Techer()

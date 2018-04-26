@@ -1,0 +1,4 @@
+3
+name1\ s surname1\ 30 man History\
+n name2\ surname2\ 45 woman Information Technology\
+n name3\ surname3\ 40 man Information Technology\

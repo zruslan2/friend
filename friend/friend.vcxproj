@@ -30,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="in.txt" />
+    <Text Include="t.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{12115ED4-F6C5-40D3-914F-255C1279B460}</ProjectGuid>
