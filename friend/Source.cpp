@@ -48,8 +48,57 @@ int main()
 		}
 	}
 	printExam(ex, en);
+	int task;
+	while (true)
+	{
+		cout << "Выберите задачу:	" << endl;
+		cout << "0 - выход" << endl;
+		cout << "1 - студенты мужского пола" << endl;
+		cout << "2 - студенты женского пола" << endl;
+		cout << "3 - студенты по группам" << endl;
+		cout << "4 - самого молодого преподователя" << endl;
+		cin >> task;
+		switch (task)
+		{
+		case 1:
+		{
+			/*system("cls");*/
+			cout << "Cтуденты мужского пола:" << endl;
+			for (int i = 0;i < n;i++)
+			{
+				if ("man" == s[i])printStudent(s[i]);
+			}
+		}
+		break;
+		case 2:
+		{
+			cout << "Cтуденты женского пола:" << endl;
+			for (int i = 0;i < n;i++)
+			{
+				if ("woman" == s[i])printStudent(s[i]);
+			}
+		}
+		break;
+		case 3:
+		{
+			int gr;
+			cout << "Укажите номер группы: " << endl; cin >> gr;
+			for (int i = 0;i < n;i++)
+			{
+				if(s[i].getGroup()==gr)printStudent(s[i]);
+			}
+		}
+		break;
+		case 4:
+		{
 
-	cout << "Выберите задачу:	" << endl;
+		}
+		break;
+		default:
+			break;
+		}
+	}
+	
 	
 
 	delete[] s;

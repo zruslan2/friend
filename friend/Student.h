@@ -20,9 +20,12 @@ public:
 
 	string getSname() { return sname; }
 
+	int getGroup() { return this->group; }
+
 	bool operator>(int age);
 
 	friend void printStudents(Student*ss, int size);
+	friend void printStudent(Student&s);
 	friend void operator >> (istream& in, Student &s);
 	/*friend void add(Student*s);*/
 	friend bool operator==(string male, Student obj);

@@ -39,6 +39,12 @@ void printStudents(Student*ss, int size)
 	}
 }
 
+void printStudent(Student&s)
+{
+	cout << s.sname << "\t" << s.name << "\t" << s.age <<
+		"\t" << s.male << "\t" << s.group << endl;
+}
+
 void operator >> (istream& in, Student &s)
 {
 	string str;
