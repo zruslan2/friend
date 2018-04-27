@@ -54,9 +54,9 @@ void operator >> (istream& in, Student &s)
 	in >> s.age >> s.male >> s.group;	
 }
 
-bool operator==(string male, Student obj)
+bool operator==(int group, Student obj)
 {
-	return(male == obj.male);
+	return(group == obj.group);
 }
 
 bool operator!=(string male, Student obj)

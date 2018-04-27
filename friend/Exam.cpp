@@ -38,6 +38,24 @@ void printExam(Exam *obj, int size)
 		cout <<setw(35)<< obj[i].subject << setw(15) << obj[i].student_snam << setw(15) << obj[i].teacher_sname << setw(6) << obj[i].grade << endl;
 }
 
+void printExc(Exam *obj, int size)
+{
+	for (int i = 0;i < size;i++)
+	{
+		if(obj[i].grade==5)
+			cout << setw(35) << obj[i].subject << setw(15) << obj[i].student_snam << setw(15) << obj[i].teacher_sname << setw(6) << obj[i].grade << endl;
+	}
+}
+
+void printDeu(Exam *obj, int size)
+{
+	for (int i = 0;i < size;i++)
+	{
+		if (obj[i].grade <= 2)
+			cout << setw(35) << obj[i].subject << setw(15) << obj[i].student_snam << setw(15) << obj[i].teacher_sname << setw(6) << obj[i].grade << endl;
+	}
+}
+
 Exam::~Exam()
 {
 }

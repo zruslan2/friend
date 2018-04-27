@@ -31,7 +31,7 @@ int main()
 	cout << "Students:\n";
 	printStudents(s, n);
 	cout << "Teachers:\n";
-	printTecher(t, np);
+	printTechers(t, np);
 	en = n*np;
 	Exam *ex = new Exam[en];
 	string subj;
@@ -57,6 +57,12 @@ int main()
 		cout << "2 - студенты женского пола" << endl;
 		cout << "3 - студенты по группам" << endl;
 		cout << "4 - самого молодого преподователя" << endl;
+		cout << "5 - самого взрослого преподователя" << endl;
+		cout << "6 - вывести преподавателей по кафедрам" << endl;
+		cout << "7 - Список студентов, которые сдали экзамен на 5, " << endl;
+		cout << "    у которого преподавателя и по какому предмету" << endl;
+		cout << "8 - Список студентов, которые сдали экзамен на 2 и меньше, " << endl;
+		cout << "    у которого преподавателя и по какому предмету" << endl;
 		cin >> task;
 		switch (task)
 		{
@@ -66,7 +72,7 @@ int main()
 			cout << "Cтуденты мужского пола:" << endl;
 			for (int i = 0;i < n;i++)
 			{
-				if ("man" == s[i])printStudent(s[i]);
+				if ("woman" != s[i])printStudent(s[i]);
 			}
 		}
 		break;
@@ -75,7 +81,7 @@ int main()
 			cout << "Cтуденты женского пола:" << endl;
 			for (int i = 0;i < n;i++)
 			{
-				if ("woman" == s[i])printStudent(s[i]);
+				if ("man" != s[i])printStudent(s[i]);
 			}
 		}
 		break;
@@ -85,16 +91,42 @@ int main()
 			cout << "Укажите номер группы: " << endl; cin >> gr;
 			for (int i = 0;i < n;i++)
 			{
-				if(s[i].getGroup()==gr)printStudent(s[i]);
+				if(gr==s[i])printStudent(s[i]);
 			}
 		}
 		break;
 		case 4:
 		{
-
+			minA(t, np);				
+		}
+		break;
+		case 5:
+		{
+			maxA(t, np);
+		}
+		break;
+		case 6:
+		{
+			string fac;
+			cin.get();
+			cout << "Введите название кафедры: ";getline(cin, fac, '\n');
+			faculty(t, fac, np);
+		}
+		break;
+		case 7:
+		{
+			printExc(ex, en);
+		}
+		break;
+		case 8:
+		{
+			printDeu(ex, en);
 		}
 		break;
 		default:
+		{
+			cout << "Такого задачи не существует" << endl;
+		}
 			break;
 		}
 	}
